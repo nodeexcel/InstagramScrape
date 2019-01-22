@@ -5,9 +5,10 @@ const puppeteer = require('puppeteer');
         const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
         const page = await browser.newPage();
         const url = "https://www.instagram.com/web/"
-        await page.goto(url, { waitUntil: ['load', 'domcontentloaded'] });
+        await page.goto(url);
         const selector = 'input.XTCLo.x3qfX'
-        await page.type(selector, searchTerm, { delay: 400 });
+        await page.type(selector, searchTerm);
+        await page.waitForSelector('div.drKGC span.Ap253');
         const response = await page.evaluate(() =>
             Array.from(document.querySelectorAll('div.drKGC span.Ap253')).map(result => result.innerText)
         )
