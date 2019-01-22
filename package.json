@@ -1,0 +1,16 @@
+{
+  "name": "insta_scrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node instaScrape"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "puppeteer": "^1.11.0"
+  }
+}
